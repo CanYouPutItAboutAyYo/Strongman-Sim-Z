@@ -1,13 +1,7 @@
 # Strongman-Sim-Z
 
-ROBLOX "Strongman Simulator" Script Z with LUA
-Used "Hydra Exploit UI Library" In
-Created and Designed by  @tranquiLos
-
-
+ROBLOX "Strongman Simulator" Script Z with LUA   |   With "Hydra Exploit UI Library" In   |   Created and Designed by  @tranquiLos
 Execute The Code With Any Exploiter.
-###
-
 
 
 
@@ -15,7 +9,6 @@ Execute The Code With Any Exploiter.
 
 --
 SCRIPT CODES
---
 
 
 
@@ -29,17 +22,28 @@ _G.On = false
 _G.On2 = false
 _G.auto = false
 _G.multipier = 0
-local Codes = {
-	"strongman",
-	"100m",
-	"Chad",
-	"10m",
-	"25k",
-	"1500likes",
-	"5000likes",
-	"10000",
-	"500likes"
-}
+
+function RedeemCodes()
+    local Codes = {
+        "strongman",
+        "100m",
+        "Chad",
+        "10m",
+        "25k",
+        "1500likes",
+        "5000likes",
+        "10000",
+		"500likes"
+    }
+    
+    for _, code in ipairs(Codes) do
+        game:GetService("ReplicatedStorage").PromoCodeRequest:InvokeServer(code)
+        wait(1)
+    end
+
+    return "Codes Are Injected Into Game"
+end
+
 function testinterest(part, totouch, staticnum)
     local test = part.CFrame
     part.CFrame = totouch.CFrame
@@ -177,7 +181,7 @@ Section1:Toggle({Title = "Auto Strength", Description = "Auto Strength For OutWo
 end)
 
 Section4:Button({Title = "Reedem Codes", ButtonName = "CLICK", Description = "",}, function(value)
-    value = game:GetService("ReplicatedStorage").PromoCodeRequest:InvokeServer("strongman", "100m", "Chad", "10m", "25k", "1500likes", "5000likes", "10000", "500likes")
+    value = RedeemCodes()
 end)
 
 Section3:Button({Title = "Scripted For", ButtonName = "by tranquiLo", Description = "BLACKMJX",}, function(value)
