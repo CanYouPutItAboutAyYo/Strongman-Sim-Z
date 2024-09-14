@@ -18,10 +18,10 @@ if not game:IsLoaded() then
 	game.Loaded:Wait()
 end
 wait()
-_G.On = false
-_G.On2 = false
-_G.auto = false
-_G.multipier = 0
+_G.On = true
+_G.On2 = true
+_G.auto = true
+_G.multipier = 100
 
 function RedeemCodes()
     local Codes = {
